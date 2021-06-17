@@ -3,21 +3,25 @@
     <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
     <div class="d-flex justify-content-between form-group">
 
-        <select name="location" class="form-select col-md-5" id="weatherLocation" formControlName="location" aria-label="Select Location From The List">
-            <option value="" selected disabled>Select City</option>
-            <option value="Tel Aviv, IL">Tel Aviv</option>
-            <option value="New York, US">New York</option>
-            <option value="London, UK">London</option>
-        </select>
+        <div class="select-wrap">
+            <select name="location" class="form-select col-md-5" id="weatherLocation" formControlName="location" aria-label="Select Location From The List">
+                <option value="" selected disabled>Select City</option>
+                <option value="Tel Aviv, IL">Tel Aviv</option>
+                <option value="New York, US">New York</option>
+                <option value="London, UK">London</option>
+            </select>
+            <span>Form Status: {{ weatherSearchForm.status }}</span>
+        </div>
+        <div class="select-wrap">
+            <select name="Units" class="form-select col-md-5" id="weatherLocation" formControlName="units" aria-label="Select Units Type">
+                <option value="" selected disabled>Select Unit Type</option>
+                <option value="Default">Default</option>
+                <option value="Metric">Metric</option>
+                <option value="Imperial">Imperial</option>
+            </select>
+        </div>
 
-        <select name="Units" class="form-select col-md-5" id="weatherLocation" formControlName="units" aria-label="Select Units Type">
-            <option value="" selected disabled>Select Unit Type</option>
-            <option value="Default">Default</option>
-            <option value="Metric">Metric</option>
-            <option value="Imperial">Imperial</option>
-        </select>
-
-        <div class="text-center col-md-2">
+        <div class="add-city-wrap text-center col-md-1">
             <button type="submit" class="add-city-btn btn btn-sm">+</button>
         </div>
     </div>
